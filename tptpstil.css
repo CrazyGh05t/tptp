@@ -1,0 +1,657 @@
+:root{
+    --primary: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    background-color: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.logo img{
+    max-width: 90px;
+    height: auto;
+}
+
+.navmenu{
+    display: flex;
+
+}
+.navmenu a{
+    color: #000000;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-weight: 400;
+    transition:all .42s ease;
+}
+.navmenu a:hover {
+    color:rgb(53, 53, 53);
+}
+.nav-icon{
+    display: flex;
+    align-items: center;
+}
+.nav-icon i{
+    color: #000;
+    margin-right: 20px;
+    font-size: 25px;
+    transition: all .42s ease;
+}
+.nav-icon i:hover{
+    transform: scale(1.1);
+    color:#454545;
+}
+
+#menu-icon{
+    font-size: 35px;
+    color: #2c2c2c;
+    z-index: 10001;
+    cursor:pointer;
+}
+section{
+    padding: 10% 10%;
+}
+.main-shop{
+    width:100%;
+    height:100vh;
+    background-image: url(images/banner.jpg);
+    background-position:center;
+    background-size: cover;
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    /*ova kombinacija pravila stvara grid sa samo jednom kolonom 
+    koja će se protezati kroz cijelu širinu roditeljskog elementa*/
+    align-items: center;
+}
+.main-text h5{
+    color:#f5366c;
+    font: size 18px;
+    text-transform: capitalize;/*Velika pocetna slova*/
+    font-weight: 500;
+}
+.main-text h1{
+    color: #000;
+    font-size: 56px;
+   
+    text-transform: capitalize;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 6px 0 10px;
+    
+}
+.main-text p{
+    color:#333c56;
+    font-size: 20px;
+    font-style:italic;
+    margin-bottom: 20px;
+}
+.main-btn{
+    display:inline-block;
+    color:#111;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border:2px solid #111;
+    padding:12px 25px;
+    transition: all .42s ease;
+}
+.main-btn:hover{
+    background-color:#000;
+    color:#fff;
+    transition: all .70s ease;
+}
+.main-btn i{
+    vertical-align: middle;
+}
+
+/* trending-section-css*/
+.center-text h2{
+    color:#111;
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+.center-text span{
+    color: #f5366c;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    gap: 1rem; /* Smanjen razmak kako bi se osiguralo da stane više kolona.*/
+    padding: 1rem;
+}
+.row{
+    position: relative;
+    transition: all .40s;
+}
+.row img{
+    width:100%;
+    height: auto;
+    transition: all .40s;
+    
+}
+.row img:hover{
+    transform: scale(0.9);
+}
+.product-text h5{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #27b737;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.heart-icon{
+    position:absolute;
+    right: 0;
+    font-size: 20px;
+}
+.heart-icon:hover{
+    color:#f5366c;
+}
+.ratting i{
+    color:#f5366c;
+    font-size: 18px;
+}
+.price h4{
+    color:#111;
+    font-size:  16px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.price p{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 700;
+}
+#btn1{
+    color:#fff;
+    background-color: #f5366c;
+    border: none;
+    font-size: 14px;
+    padding: 3px 15px;
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    
+}
+#btn1:hover{
+    background-color:#fff;
+    color:#f5366c;
+    transition: all .60s ease;
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center; 
+    padding: 1rem; 
+    font-size: 0.9rem; 
+    color: #000000;
+    z-index: 50;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
+footer p {
+    margin: 0; 
+}
+
+/* CART */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+}
+
+/* SLIDER */
+     
+      .slide {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+      
+      main {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      }
+      
+      .item {
+        width: 200px;
+        height: 300px;
+        list-style-type: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+        box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+        transition: transform 0.1s, left 0.25s, top 0.25s, width 0.25s, height 0.25s;
+      
+        &:nth-child(1), &:nth-child(2) {
+            margin: 0;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transform: none;
+          border-radius: 0;
+          box-shadow: none;
+          opacity: 1;
+        }
+      
+        &:nth-child(3) { left: 70%; }
+        &:nth-child(4) { left: calc(70% + 220px);}
+        &:nth-child(5) { left: calc(70% + 440px); opacity: 0;}
+      }
+      
+      .content {
+        width: min(30vw,400px);
+        position: absolute;
+        top: 50%;
+        left: 4rem;
+        transform: translateY(-50%);
+        font: 400 0.85rem helvetica,sans-serif;
+        color: white;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+        opacity: 0;
+        display: none;
+      
+        & .title {
+          text-transform: uppercase;
+        }
+      
+        & .description {
+          line-height: 1.7;
+          margin: 1rem 0 1.5rem;
+          font-size: 0.8rem;
+        }
+      
+        & button {
+          width: fit-content;
+          background-color: rgba(0,0,0,0.1);
+          color: white;
+          border: 2px solid white;
+          border-radius: 0.25rem;
+          padding: 0.75rem;
+          cursor: pointer;
+        }
+      }
+      
+      .item:nth-of-type(2) .content {
+        display: block;
+        animation: show 0.75s ease-in-out 0.3s forwards;
+      }
+      
+      @keyframes show {
+        0% {
+          filter: blur(5px);
+          transform: translateY(calc(-50% + 75px));
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+      
+      .nav {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        user-select: none;
+      
+        & .btn {
+          background-color: rgba(255,255,255,0.5);
+          color: rgba(0,0,0,0.7);
+          border: 2px solid rgba(0,0,0,0.6);
+          margin: 0 0.25rem;
+          padding: 0.75rem;
+          border-radius: 50%;
+          cursor: pointer;
+      
+          &:hover {
+            background-color: rgba(255,255,255,0.3);
+          }
+        }
+      }
+      
+    
+      :root {
+        --c-primaryColor: #7b7b8cc4;
+        --c-secondaryColor: #2dc355;
+    }
+
+    /*Side meni-i*/
+    
+    .side-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 100;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 17.5%;
+        height: 100%;                                           /*Boja, sirina naspram sirine ekrana, visina uvijek kao i body (100vh),*/
+        position: absolute;                                        /*Pozicija fiksirana za ekran nevezana za ostatak elemenata*/
+        padding: 2.6vw;
+    }
+    
+    .sm-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        position: fixed;
+        left: -17.5%;                                /*Lijevo poravnanje za position: fixed*/
+        border-top-right-radius: 50px;              /*Gornji desni i donji desni cosak zaobljen*/
+        border-bottom-right-radius: 50px;
+        transition: all 0.3s ease; 
+    }
+    .sm.active{
+        left: 0;     
+        transition: all 0.3s ease;                            
+    }
+    .sm-left.active{
+        left: 0;     
+        transition: all 0.3s ease;                            
+    }
+    
+    .sm-right {
+        position: fixed;
+        right: -17.5%;                               /*Lijevo poravnanje za position: fixed*/
+        border-top-left-radius: 50px;           /*Gornji lijevi i donji lijevi cosak zaobljen*/
+        border-bottom-left-radius: 50px;
+        transition: all 0.3s ease; 
+    }
+    
+    .sm-right.active {
+        right: 0;
+        transition: all 0.3s ease;                              
+    }
+
+    .rotate{
+        writing-mode: vertical-lr;
+        rotate: 180deg;
+    }
+
+    .rotate2{
+        writing-mode: vertical-lr;
+    }
+
+    .sm-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        height: 15%;
+        width: 2.5rem;
+        position: absolute;
+        top: 42.5%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .sm-btn-left  {
+        border-top-right-radius: 15px;                         /*Dimenzije dugmeta, zaobljenje, granice, pozicija i njene relativne koordinate*/
+        border-bottom-right-radius: 15px;
+        left: -20px;
+        transform: translateX(50%);
+        z-index: 200;
+    }
+    
+    .sm-btn-right {
+        border-top-left-radius: 15px;                         /*Dimenzije dugmeta, zaobljenje, granice, pozicija i njene relativne koordinate*/
+        border-bottom-left-radius: 15px;
+        right: -20px;
+        transform: translateX(-50%);
+        z-index: 200;
+    }
+    
+    .sm-btn-left.active {
+        left: 14%;
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        background-color: #fff;                    
+    }
+
+    .sm-btn-right.active {
+        right: 14%;
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        background-color: #fff;                    
+    }
+    
+        /* Autorske slike */
+    
+    .author-list, .test-list {
+        list-style: none;                       /*Uklonjene default tackice liste*/
+        padding: 0;
+        margin: 0;
+        display: flex;                          /*Display podesen da flexbox*/
+        flex-direction: column;                 /*Pravac flexboxa je kolona*/
+        justify-content: center;                /*Poravnanje po x osi flexboxa je centar*/
+        align-items: center;                    /*Poravnanje po y osi flexboxa je centar*/
+                                    /*Razmak izmedju njih (privremeno)*/
+    }
+    
+    /* Ostatak privremenih gluposti */
+    
+    .test-item {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+    }
+    
+    
+/* TIM */
+
+.our-team {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f7f5ec;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .our-team .picture {
+    display: inline-block;
+    margin-bottom: 15px;
+    z-index: 1;
+    position: relative;
+    border-radius: 50%;
+  }
+  
+  .our-team .picture img {
+    border-radius: 50%;
+    width: 100%;
+  }
+
+  .name{
+    font-size: 1.2vw;
+  }
+
+  .box1{
+    border-radius: 60px;
+    display: flex;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(100, 100, 100, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    margin: 100px;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .box2{
+    border-radius: 60px;
+    display: flex;
+    height: 50%;
+    width: 50%;
+    background-color: rgba(100, 100, 100, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    right: 0;
+    margin-right: 100px;
+    margin-top: 110px;
+    transition: z-index 1 ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .box2:hover{
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .box1:hover{
+    transform: scale(1.05);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .jordan{
+    top: 40px;
+    left: 70px;
+    position: absolute;
+    width: 40%;
+    height: auto;
+  }
+  
+
+  .form {
+    background-color: rgba(255, 255, 255, 0.383);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+    margin-left: 50px;
+    padding: 40px;
+    gap: 20px;
+    border: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+  }
+
+  .form-item {
+    width: 60%;
+  }
+
+  .form-item input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;  
+    padding: 5px;               
+    outline: none; 
+    background-color: transparent;
+    font-size: 1.1rem;
+  }
+
+  .form-item input::selection {
+    border-bottom: 1px solid #000;  
+  }
+
+  .form h2 {
+    font-size: 1.75rem;
+  }
+
+  .textarea {
+    width: 100%;
+    border: 1px solid #000; 
+    background-color: transparent;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+  }
+
+  .submit-btn {
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(252,212,244,255);
+    background-color: rgba(252,212,244,255);
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: rgba(255, 255, 255, 255);
+    color: rgba(244,176,234,255); 
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .submit-error {
+    color: red;
+  }
